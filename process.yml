@@ -1,0 +1,18 @@
+apps:
+  - script   : app.js
+    name : whoisundercover
+    instances: 1
+    exec_mode: fork
+    log_date_format: YYYY-MM-DD HH:mm Z
+    watch :
+      - app.js
+      - public
+    ignore_watch:
+      - node_modules
+      - dist
+      - .history
+      - .idea
+    env:
+      PORT: 4001
+      NODE_ENV: production
+      PUBLIC_PATH: public
